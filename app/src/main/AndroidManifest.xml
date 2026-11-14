@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 읽기: 문(DOORS), 창(WINDOWS), 조명(LIGHTS), 좌석 착석·열선(SEATS),
+         계기판 거리(MILEAGE), 공개 경고 신호(SAFETY), 연료·배터리(ENERGY), 공조(CLIMATE) -->
+    <!-- 기어: Pleos Gear 도메인 deprecated → AAOS 표준 GEAR_SELECTION -->
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+    <!-- 계기판 거리(Odometer.getCurrentDistanceDriven)는 CAR_DRIVE 가 있어야 읽힌다(에뮬레이터 확인) -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_DOORS" />
+    <uses-permission android:name="pleos.car.permission.CAR_WINDOWS" />
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CAR_SEATS" />
+    <uses-permission android:name="pleos.car.permission.CAR_MILEAGE" />
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />
+    <uses-permission android:name="pleos.car.permission.CAR_CLIMATE" />
+
+    <!-- 쓰기: 창 닫기, 문 잠금, 독서등·무드등, 팬·풍향, 열선·통풍 -->
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_WINDOWS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_DOORS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_CLIMATE" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_SEATS" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WakeTidy">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|density|uiMode"
+            android:theme="@style/Theme.WakeTidy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
